@@ -44,15 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
-    <Compile Include="MainModule.cs" />
-    <Compile Include="ProcessHandleThreadArguments.cs" />
-    <Compile Include="ProcessMonitor.cs" />
-    <Compile Include="ProcessStartedEventArgs.cs" />
-    <Compile Include="ProcessStopedEventArgs.cs" />
-    <Compile Include="ProcessThreadArguments.cs" />
+    <Compile Include="Process\MainModule.cs" />
+    <Compile Include="ThreadArguments\ProcessHandleThreadArguments.cs" />
+    <Compile Include="Monitor\ProcessMonitor.cs" />
+    <Compile Include="Events\ProcessStartedEventArgs.cs" />
+    <Compile Include="Events\ProcessStopedEventArgs.cs" />
+    <Compile Include="ThreadArguments\ProcessThreadArguments.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SafeProcess.cs" />
+    <Compile Include="Process\SafeProcess.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
