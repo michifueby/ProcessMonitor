@@ -26,7 +26,6 @@
                 Console.WriteLine($"      Name: {e.SafeProcess.ProcessName}");
                 Console.WriteLine($"Executable: {e.SafeProcess.MainModule.Filename}");
                 Console.WriteLine($"        Id: {e.SafeProcess.Id}");
-                Console.WriteLine($" StartTime: {e.SafeProcess.StartTime}");
                 Console.WriteLine($"  ExitCode: {e.SafeProcess.ExitCode}\n");
                 Console.ResetColor();
             };
