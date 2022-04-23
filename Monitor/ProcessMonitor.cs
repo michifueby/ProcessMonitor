@@ -44,9 +44,9 @@
                 throw new InvalidOperationException("The process thread is already running!");
             }
 
-            processThreadArguments.Exit = false;
-            proccessThread = new Thread(Worker);
-            proccessThread.Start(processThreadArguments);
+            this.processThreadArguments.Exit = false;
+            this.proccessThread = new Thread(Worker);
+            this.proccessThread.Start(this.processThreadArguments);
             StartProcessHandle();
         }
 
@@ -57,9 +57,9 @@
                 throw new InvalidOperationException("The process handle thread is already running!");
             }
 
-            processHandleThreadArguments.Exit = false;
-            processHandleThread = new Thread(ProcessHandleWorker);
-            processHandleThread.Start(processHandleThreadArguments);
+            this.processHandleThreadArguments.Exit = false;
+            this.processHandleThread = new Thread(ProcessHandleWorker);
+            this.processHandleThread.Start(this.processHandleThreadArguments);
         }
 
         public void StopProcessHandle()
@@ -69,7 +69,7 @@
                 throw new InvalidOperationException("The process handle thread is already running!");
             }
 
-            processHandleThreadArguments.Exit = true;
+            this.processHandleThreadArguments.Exit = true;
         }
 
         public void Stop()
@@ -81,7 +81,7 @@
 
             this.processThreadArguments.Exit = true;
 
-            StopProcessHandle();
+            this.StopProcessHandle();
         }
 
         private void Worker(object data)
@@ -92,7 +92,7 @@
             {
                 Process[] allProcessesStarted = Process.GetProcesses();
 
-                CompareProcesses(allProcessesStarted);
+                this.CompareProcesses(allProcessesStarted);
 
                 Thread.Sleep(PollInterval);
             }
@@ -108,7 +108,7 @@
 
                 string input = Console.ReadLine();
 
-                ProcessCommandInput(input);
+                this.ProcessCommandInput(input);
             }
         }
 
@@ -137,9 +137,9 @@
                         Console.Write("");
                     }
 
-                    FireOnProcessStoped(processStopedEventArgs);
+                    this.FireOnProcessStoped(processStopedEventArgs);
 
-                    processList.RemoveAll(x => x.Id == stopedProcesses[i].Id);
+                    this.processList.RemoveAll(x => x.Id == stopedProcesses[i].Id);
                     stopedProcesses.RemoveAt(i);
                 }
 
