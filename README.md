@@ -10,7 +10,7 @@
 
 **Important:** Run as Administrator 
 
-## Output of process monitor on console
+## Output of process monitor console
 
 ![alt text](https://github.com/michifueby/ProcessMonitor/blob/master/processmonitor.png?raw=true)
 
