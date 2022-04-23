@@ -27,7 +27,7 @@
             processThreadArguments = new ProcessThreadArguments();
 
             processHandleThreadArguments = new ProcessHandleThreadArguments();
-            
+
             processList = new List<Process>();
         }
 
@@ -191,18 +191,12 @@
 
         protected virtual void FireOnProcessStarted(ProcessStartedEventArgs e)
         {
-            if (this.ProcessStarted != null)
-            {
-                this.ProcessStarted(this, e);
-            }
+            this.ProcessStarted?.Invoke(this, e);
         }
 
         protected virtual void FireOnProcessStoped(ProcessStopedEventArgs e)
         {
-            if (this.ProcessStoped != null)
-            {
-                this.ProcessStoped(this, e);
-            }
+            this.ProcessStoped?.Invoke(this, e);
         }
 
         private void ProcessCommandInput(string input)
@@ -215,7 +209,7 @@
             else if (input.Contains("stop"))
             {
                 input = input.Remove(0, 4);
-                
+
                 if (!StopProcess(input))
                 {
                     Console.WriteLine("Not valid pid!");
