@@ -7,3 +7,6 @@
 **Stop a process with:** ````stop pid````
 
 **Set poll interval with:** ````processMonitor.PollInterval = TimeSpan.FromSeconds(seconds);````
+
+![alt text](https://github.com/michifueby/ProcessMonitor/blob/main/processmonitor.jpg?raw=true)
+
