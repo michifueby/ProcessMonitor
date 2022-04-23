@@ -8,5 +8,5 @@
 
 **Set poll interval with:** ````processMonitor.PollInterval = TimeSpan.FromSeconds(seconds);````
 
-![alt text](https://github.com/michifueby/ProcessMonitor/blob/main/processmonitor.jpg?raw=true)
+![alt text](https://github.com/michifueby/ProcessMonitor/blob/master/processmonitor.jpg?raw=true)
 
