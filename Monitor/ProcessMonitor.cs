@@ -155,16 +155,14 @@
                             processStartedEventArgs.SafeProcess.Id = newProcessStartedList[i].Id;
                             processStartedEventArgs.SafeProcess.StartTime = newProcessStartedList[i].StartTime;
                             processStartedEventArgs.SafeProcess.MainModule.Filename = stopedProcesses[i].MainModule.FileName;
-
-                            FireOnProcessStarted(processStartedEventArgs);
-
-                            newProcessStartedList.RemoveAt(i);
                         }
                         catch
                         {
                             Console.Write("");
-                            FireOnProcessStarted(processStartedEventArgs);
                         }
+
+                        FireOnProcessStarted(processStartedEventArgs);
+                        newProcessStartedList.RemoveAt(i);
                     }
                 }
             }
