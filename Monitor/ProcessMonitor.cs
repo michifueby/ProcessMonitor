@@ -59,7 +59,7 @@
 
             processHandleThreadArguments.Exit = false;
             processHandleThread = new Thread(ProcessHandleWorker);
-            processHandleThread.Start();
+            processHandleThread.Start(processHandleThreadArguments);
         }
 
         public void StopProcessHandle()
@@ -98,9 +98,11 @@
             }
         }
 
-        private void ProcessHandleWorker()
+        private void ProcessHandleWorker(object data)
         {
-            while (true)
+            ProcessHandleThreadArguments args = (ProcessHandleThreadArguments)data;
+            
+            while (!args.Exit)
             {
                 Console.SetCursorPosition(0, Console.CursorTop);
 
